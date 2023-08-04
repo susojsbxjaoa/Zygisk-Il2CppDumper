@@ -5,14 +5,8 @@
 #ifndef ZYGISK_IL2CPPDUMPER_HACK_H
 #define ZYGISK_IL2CPPDUMPER_HACK_H
 
-#include <jni.h>
-#include "log.h"
+#include <stddef.h>
 
-static int enable_hack;
-static char *game_data_dir = NULL;
-
-int isGame(JNIEnv *env, jstring appDataDir);
-
-void *hack_thread(void *arg);
+void hack_prepare(const char *game_data_dir, void *data, size_t length);
 
 #endif //ZYGISK_IL2CPPDUMPER_HACK_H
